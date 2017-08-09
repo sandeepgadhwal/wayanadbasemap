@@ -1688,7 +1688,7 @@ function loadfilter() {
 		  extra_params: {
 			  map_key: ""
 		  }
-        }).done(function(layer) {
+        }, { https: true } ).done(function(layer) {
 			var sublayer = layer.getSubLayer(0);
 			var firstSQL = sublayer.getSQL();
 			sublayer.setInteraction(true);

@@ -177,7 +177,7 @@ var CartoDbLib = {
 		  extra_params: {
 			  map_key: ""
 		  }
-        })
+        }, { https: true } )
         .addTo(CartoDbLib.map)
         .done(function(layer) {
           
@@ -212,7 +212,7 @@ var CartoDbLib = {
             sql: "SELECT * FROM ringroad",
             cartocss: layerStyle
           }]
-        })
+        }, { https: true } )
         .addTo(CartoDbLib.map)
         .done(function(layer) {
           CartoDbLib.ringroad = layer;
@@ -251,7 +251,7 @@ var CartoDbLib = {
             sql: "SELECT * FROM layoutsmerge",
             cartocss: layerStyle
           }]
-        })
+        }, { https: true } )
         .addTo(CartoDbLib.map)
         .done(function(layer) {
           CartoDbLib.layouts = layer;
