@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>
+      
+        About -
+      
+      Avenue Realty
+    </title>
+    <meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta content='An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.' name='description'>
+    <meta content='Avenue Realty' name='author'>
+
+    <!-- Facebook metadata -->
+    <meta content="Avenue Realty" property="og:site_name">
+    
+      <meta content="About - Avenue Realty" property="og:title">
+    
+    
+      <meta content="article" property="og:type">
+    
+    
+      <meta content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago." property="og:description">
+    
+    
+      <meta content="http://Avenue.in/plots/about/" property="og:url">
+    
+    
+    
+      <meta content="http://Avenue.in/plots/images/logo.png" property="og:image">
+    
+    
+    
+
+    <!-- Twitter metadata -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@DataMadeCo">
+    <meta name="twitter:creator" content="@DataMadeCo">
+    
+      <meta name="twitter:title" content="About">
+    
+    
+      <meta name="twitter:url" content="http://Avenue.in/plots/about/">
+    
+    
+      <meta name="twitter:description" content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.">
+    
+    
+      <meta name="twitter:image:src" content="http://Avenue.in/plots/images/logo.png">
+    
+    <link href='/favicon.ico' rel='shortcut icon'>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/bootstrap.readable.min.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/jquery-ui.css"/>
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/cartodb.css" />
+
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://libs.cartodb.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
+    <![endif]-->
+
+    <script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<style type="text/css" media="screen">
+	footer#colophon
+		{
+			display: none;
+		}
+		.nmap {
+		position: relative;
+		height: calc(100vh - 0px);
+	   /* z-index: -1;*/
+	}
+	.website-wrapper .container.main_wrapper
+	{
+		width: 100%;
+		padding: 0;
+	}
+	body .mobilewrapper
+	{
+		z-index: 999
+	}
+
+	body .nmap .list-unstyled{
+		margin: 0;
+	}
+	body div.panel-default>.panel-heading {
+		/* color: #333333; */
+		background: #384255 !important;
+		border: 0 none !important;
+			border-radius: 0;
+			position: static !important;
+			width: 100% !important;
+
+	}
+	div.panel-group div.panel
+	{
+		border: 0 none;
+	}
+	body div#filters
+	{
+		margin-top: 0;
+		padding-top: 0;
+		overflow-y: scroll;
+		overflow-x: auto;
+		height: calc(100vh - 50px);
+		padding-bottom: 20px;
+	}
+
+	body div#legend{
+		margin-top: 0;
+		padding-top: 0;
+		overflow-y: scroll;
+		overflow-x: auto;
+		height: calc(100vh - 50px);
+		padding-bottom: 120px;
+	}
+
+	body div#accordion-left, body div#accordion-right
+	{
+		overflow: hidden;
+	}
+
+	div.mini-submenu.mini-submenu-right, div.mini-submenu.mini-submenu-left{
+		top: 10px;
+	}
+	body div.leaflet-top .leaflet-control
+	{
+		
+	}
+	div.mini-submenu.mini-submenu-right
+	{
+		top: 55px;
+	}
+	body input#villagesearch {
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+	body .nmap  div.panel-body, body .nmap  div.well
+	{
+		padding: 10px;
+	}
+	body .nmap  h6
+	{
+		margin-bottom: 5px;
+	}
+	#facefilter td input
+	{
+		margin: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	div.panel-body.list-group h6, body .nmap div.well h6 {
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	body div#filters > div.well
+	{
+	margin-top: 0;
+	}
+	.nmap h1, .nmap h2, .nmap h3, .nmap h4, .nmap h5, .nmap h6, .nmap .h1, .nmap .h2, .nmap .h3, .nmap .h4, .nmap .h5, .nmap .h6, body .nmap
+	{
+		font-family: "Calibri", Sans-Serif !important;
+	}
+
+	body  .mobile-logo img {
+		margin: 5px auto;
+		max-height: 60px;
+		width: auto;
+	}
+	@media only screen and (min-width: 1023px){
+	body div.nmapmargin
+	{
+		margin-top: 0
+	}
+	.hshide{
+		display: none;
+	}
+	}
+	@media only screen and (max-width: 1023px){
+		body .header_wrapper{
+		height: 70px;
+	}
+	body .col-sm-4.col-md-2.sidebar.sidebar-right.pull-right
+	{
+		/*display: none;*/
+	}
+	body div.mini-submenu.mini-submenu-right
+	{
+		display: block;
+	}
+	body a.leaflet-control-layers-toggle, body .leaflet-retina .leaflet-control-layers-toggle {
+		background-image: url("<?php echo get_site_url();?>/wp-content/themes/wpresidence-child/amaravati-plots-layout/css/images/layers.png");
+		width: 36px;
+		height: 36px;
+	}
+	body div.leaflet-top .leaflet-control {
+		margin-top: 10px;
+	}
+	div.mini-submenu.mini-submenu-right {
+		top: 55px;
+	}
+	.mobile_header{
+			display:block;
+			z-index: 9999;
+		}
+	.nmap {
+
+		margin: 70px 0 0;
+	}
+	.hshide.hsection{
+		display: block !important;
+	}
+	body .mobile-trigger:hover i
+	{
+		color: #FFF;
+	}
+	}
+	@media only screen and (max-width: 767px){
+	.col-sm-4.col-md-7.mid{
+		display: none;
+	}
+		}
+	</style>
+  </head>
+  <body>
+    <div class='container-fluid nmap'>
+      <div class='row'>
+  <div class='col-md-3'>
+    <div class='well'>
+      <h3>Sections</h3>
+      <ol>
+        <li>
+          <a href='#what-is-this'>What is this?</a>
+        </li>
+        <li>
+          <a href='#what-is-zoning'>What is zoning?</a>
+        </li>
+        <li>
+          <a href='#dear-maxis'>Dear Maxis and Electronic Arts: Don't sue us!</a>
+        </li>
+        <li>
+          <a href='#team'>Team and credits</a>
+        </li>
+        <li>
+          <a href='#data'>Data</a>
+        </li>
+        <li>
+          <a href='#code'>Code</a>
+        </li>
+        <li>
+          <a href='#contact-us'>Contact us</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class='col-md-7'>
+    <h2>About</h2>
+    <hr>
+    <h4 id='what-is-this'>What is this?</h4>
+    <p>Gotham Zoning is an interactive map that lets you:</p>
+            <ul>
+              <li>
+                find out <strong>how your building is zoned</strong>
+              </li>
+              <li>
+                learn <strong>where to locate your business</strong>
+              </li>
+              <li>
+                explore <strong>zoning patterns</strong> throughout the city
+              </li>
+            </ul>
+            <p>
+              To make New York City's zoning code digestible by humans, we took inspiration from one of our favorite games: <a href="http://en.wikipedia.org/wiki/SimCity_2000">Sim City 2000</a>.
+            </p>
+            <p>
+              It started with the color scheme: <strong style='color: #7DD67D;'>green</strong>
+              for residential, <strong style='color: #7474D7;'>blue</strong>
+              for commercial and <strong style='color: #DCDC7F;'>yellow</strong>
+              for manufacturing. (This oversimplifies things a bit, <a href='/about#zoning-categories'>read the full story</a>.)
+            </p>
+            <p>From there we got a little carried away. Graphics, sounds, music, oh my.</p>
+            <p>Gotham Zoning is a fork of <a href='http://secondcityzoning.org/'>2nd City Zoning</a>, a civic app built by <a href = 'http://opencityapps.org/'>Open City</a>.  Be sure to check out their great work, and consider forking this project for your city too!</p>
+
+    <hr>
+    
+    
+    <h4 id='what-is-zoning'>What is zoning?</h4>
+     Zoning is the set of rules that a city comes up with to define acceptable land use in specific areas. 
+        </p>
+        <p>
+          It consists of
+          <a href='http://www.nyc.gov/html/dcp/html/zone/zonetext.shtml'>regulations</a>
+          that control how big of a building you can build on a property,
+          what you can do inside it. You can't just build anything anywhere -
+          every property in New York City lives in a zoning district of one kind or another.
+          
+        </p>
+
+                <p>Check out the <a href = 'http://www.nyc.gov/html/dcp/html/zone/zonehis2.shtml'>NYC Department of City Planning's Zoning Pages</a> for more information, including the <a href = 'http://www.nyc.gov/html/dcp/html/zone/zonetext.shtml'>full text of the zoning ordinance</a></p>
+
+    <hr>
+    
+    <h4 id='dear-maxis'>Dear Maxis and Electronic Arts: Don't sue us!</h4>
+    <p>
+      We are using some music and sound effects from
+      <a href='http://en.wikipedia.org/wiki/SimCity_2000'>Sim City 2000</a>
+      on this website. This is not to make a Sim City competitor, but to make the experience of diving in to zoning laws fun!
+    </p>
+    <h5>Credits</h5>
+    <p>
+      Sim City 2000 was made by
+      <a href='http://en.wikipedia.org/wiki/Will_Wright_(game_designer)'>Will Wright</a>
+      and
+      <a href='http://en.wikipedia.org/wiki/Fred_Haslam'>Fred Haslam</a>
+      and many others at
+      <a href='http://www.maxis.com/'>Maxis</a>.
+    </p>
+    <p>
+      Sim City 2000 soundtrack by Brian Conrad, Sue Kasper, Justin McCormick.
+    </p>
+    <p>
+      &copy; Maxis/Maxis, Electronic Arts, DSI Games/Zoo Digital (GBA), all rights reserved.
+    </p>
+    <p>
+      Sim City is a trademark of Maxis.
+    </p>
+    <h5>Buy it!</h5>
+    <p>
+      If you love Sim City as much as we do, go buy it!
+    </p>
+    <ul>
+      <li>
+        <a href='https://www.google.com/search?q=sim+city+2000&amp;hl=en&amp;tbo=u&amp;source=univ&amp;tbm=shop'>Sim City 2000</a>
+        on Google Shopping
+      </li>
+      <li>
+        <a href='http://www.gog.com/gamecard/simcity_2000_special_edition'>Sim City 2000</a>
+        on Gog.com
+      </li>
+    </ul>
+    <hr>
+    <h4 id='team'>Team and credits</h4>
+    <p>
+      Gotham Zoning is a fork of <a href = 'http://secondcityzoning.org/'>2nd City Zoning</a>, an
+      <a href='http://opencityapps.org'>Open City</a>
+      project. 
+    </p>
+    <p>
+      The original Open City team is:
+    </p>
+    <ul>
+      <li>
+        <a href='http://derekeder.com'>Derek Eder</a>
+        - developer and designer
+      </li>
+      <li>
+        <a href='https://jpvelez.contently.com/'>Juan-Pablo Velez</a>
+        - zoning research and descriptions
+      </li>
+      <li>
+        <a href='https://ayaoconnor.com'>Aya O'Connor</a>
+        - logo and design
+      </li>
+    </ul>
+    The project was forked for New York City by <a href = 'http://www.chriswhong.com'>Chris Whong</a>.
+    <hr>
+    <h4 id='data'>Data</h4>
+    <p>
+      This site was built with
+      <a href='http://www.nyc.gov/html/dcp/html/bytes/dwnzdata.shtml'>zoning shapefiles</a>
+      from the New York City Department of City Planning.
+  
+    </p>
+    <p>
+      <a href = 'http://www.nyc.gov/html/dcp/html/subcats/zoning.shtml'>The DCP Zoning Site</a> was also referenced for basic information and text about each type of zoning district.
+    </p>
+    
+    <p>
+      We love that the City of New York has opened their data for all to use. This site represents just one example of what can be done with it. We hope it inspires others to dive in to zoning (and other) civic open datasets.
+    </p>
+    <hr>
+    <h4 id='code'>Code</h4>
+    <p>
+      All the code for this site is open source. It was built with Jekyll, Twiiter Bootstrap, Javascript, CartoDB and Leaflet and hosted on GitHub pages. The data is stored in CartoDB and was provided by the <a href='http://www.nyc.gov/html/dcp/html/bytes/dwnzdata.shtml'>Department of City Planning</a>.
+    </p>
+    <p>Technologies used:</p>
+    <ul>
+      <li>
+        <a href='http://jekyllrb.com/'>Jekyll</a>
+      </li>
+      <li>
+        <a href='http://getbootstrap.com'>Bootstrap</a>
+      </li>
+      <li>
+        <a href='http://jquery.com'>jQuery</a>
+      </li>
+      <li>
+        <a href='http://docs.cartodb.com/cartodb-platform/cartodb-js.html'>CartoDB.js</a>
+      </li>
+      <li>
+        <a href='http://leafletjs.com'>Leaflet</a>
+      </li>
+    </ul>
+    <p>
+      All the code for this project is up on
+      <a href='https://github.com/chriswhong/second-city-zoning'>Github</a>.
+    </p>
+    <hr>
+    <h4 id='contact-us'>Contact us</h4>
+    <p>
+      Found a bug?
+      <a href='https://github.com/chriswhong/second-city-zoning/issues'>Report it on our issue tracker!</a>
+    </p>
+    <p>
+      Have a suggestion? Tweet at <a href = 'https://twitter.com/chris_whong'>@chris_whong</a>.  Support Open Data!
+    </p>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
