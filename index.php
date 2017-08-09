@@ -1464,7 +1464,7 @@ $(window).load(function(){
 		document.getElementsByClassName('info')[0].style.visibility = 'hidden';
 		mobile = 1;
 		}
-		CartoDbLib.map.locate({ setView: true, maxZoom: 20, maximumAge : 10000, enableHighAccuracy: true});
+		CartoDbLib.map.locate({ setView: true, maxZoom: 20, enableHighAccuracy: true});
 });
 
 //declarations and page load end
