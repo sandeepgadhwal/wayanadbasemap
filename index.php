@@ -515,9 +515,9 @@
 						</span>
 					</div>
 					<div class="input-group">
-						<!--<span id='findMe' class="input-group-addon">
+						<span id='findMe' class="input-group-addon">
 							<a><i class="fa fa-location-arrow"></i></a>
-						</span>-->
+						</span>
 						<input id='search_address' type="text" class="form-control" Value="" placeholder="Type an Adress to search">
 						<!--<span id='btnSearch' class="input-group-addon no-border-radius border">
 							<a><i class="fa fa-search"></i></a>
