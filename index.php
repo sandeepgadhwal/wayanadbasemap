@@ -1410,56 +1410,6 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-//declarations and page load
-var url = "";
-var findplots = "";
-//var url_string = window.location.href.toUpperCase();     // Returns full URL
-//url = new URL(url_string);
-
-//var findplots = url.searchParams.get("FINDPLOTS");
-//if (findplots) {
-//	findplots = findplots.trim().toUpperCase();
-//	changeplots(findplots);	//call function
-//}
-//else {
-	//console.log("No plot type filter applied");
-//}
-//console.log(findplots);
-
-//var plotno = url.searchParams.get("PLOTNO");
-//if (plotno) {
-//	plotno = plotno.trim().toUpperCase();	//call function
-//}
-//else {
-//	//console.log("No plot type filter applied");
-//}
-//console.log(findplots);
-
-
-function changeplots(findplots) {
-	if (findplots=="CRDA") {
-		$('#crda').each(function () {
-		if (!$(this).text().match(/^\s*$/)) {
-			$(this).insertBefore($(this).prev('#layouts'));
-			}
-		});
-		//$("input#crdaplots").attr("checked", "checked");
-		//$("input#layoutplots").attr("checked", false);
-		//$("div#crda").show();
-		//$("div#layouts").hide();
-	}
-	else if (findplots=="LAYOUTS") {
-		$('#layouts').each(function () {
-		if (!$(this).text().match(/^\s*$/)) {
-			$(this).insertBefore($(this).prev('#crda'));
-			}
-		});
-		//$("input#layoutplots").attr("checked", "checked");
-		//$("input#crdaplots").attr("checked", false);
-		//$("div#crda").hide();
-		//$("div#layouts").show();
-	}
-}
 
 $('input#layoutplots').change(function() {
 	if ($('input#layoutplots').is(':checked')) {
@@ -1496,15 +1446,6 @@ $(window).load(function(){
 		document.getElementsByClassName('info')[0].style.visibility = 'hidden';
 		mobile = 1;
 		}
-		// load parameters
-		if (plotno) {
-			$('#plotno').val(plotno.trim());	//inject parameter value to page
-			loadplotdetails();	//call function
-		}
-		else {
-			//console.log("No plotno searched");
-		}
-		//console.log(plotno);
 });
 
 //declarations and page load end
