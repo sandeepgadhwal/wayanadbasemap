@@ -33,6 +33,8 @@ var CartoDbLib = {
      position:'bottomright'
 	}).addTo(CartoDbLib.map);
 	
+	CartoDbLib.map.locate({setView: true, maxZoom: 16});
+	
 	//map leaflet popup adjust
 	CartoDbLib.map.on('popupopen', function(e) {
     var px = CartoDbLib.map.project(e.popup._latlng); // find the pixel location on the map where the popup anchor is
@@ -130,7 +132,7 @@ var CartoDbLib = {
       cartodb.createLayer(CartoDbLib.map, CartoDbLib.layerUrl, { https: true } )
         .addTo(CartoDbLib.map)
         .done(function(layer) {
-          CartoDbLib.onlylanduse = layer;
+          CartoDbLib.mapdata = layer;
           var sublayer = layer.getSubLayer(0);
           sublayer.setInteraction(false);
           sublayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
@@ -166,7 +168,9 @@ var CartoDbLib = {
           //console.log(e)
         }); 
 		
-		loadfilter();
+		loadfilter().done( function() {
+			CartoDbLib.map.locate({setView: true, maxZoom: 16});
+		});
       }
 
     CartoDbLib.doSearch();
@@ -318,7 +322,7 @@ var CartoDbLib = {
           //CartoDbLib.getOneZone(data.features[0].properties.cartodb_id, CartoDbLib.currentPinpoint)
           }).error(function(e){console.log(e)});
 
-          // CartoDbLib.drawCircle(CartoDbLib.currentPinpoint);
+          CartoDbLib.drawCircle(CartoDbLib.currentPinpoint);
         } 
         else {
           alert("We could not find your address: " + status);
