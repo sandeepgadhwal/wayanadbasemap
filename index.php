@@ -1681,6 +1681,7 @@ function loadfilter() {
           user_name: 'sandeepgadhwal',
           type: 'cartodb',
 		  protocol: 'https',
+		  https: true,
           sublayers: [{
             sql: "SELECT * FROM admin ",
             cartocss: layerStyle,

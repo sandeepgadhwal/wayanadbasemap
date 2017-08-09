@@ -8,6 +8,7 @@ var CartoDbLib = {
   currentPinpoint: true,
   layerUrl: 'https://becexplorer.cartodb.com/api/v2/viz/f1dab0f4-29b3-11e6-9b74-0ef7f98ade21/viz.json',
   protocol: 'https',
+  https: true,
   tableName: 'master',
   maptiks_tracking_code: '',
 
@@ -164,102 +165,6 @@ var CartoDbLib = {
           //console.log('ERROR')
           //console.log(e)
         }); 
-		
-		//add the onlylanduse Layer
-        var layerStyle = $('#admin-style').text();
-        cartodb.createLayer(CartoDbLib.map, {
-          user_name: 'sandeepgadhwal',
-          type: 'cartodb',
-		  protocol: 'https',
-          sublayers: [{
-            sql: "SELECT * FROM admin_layer",
-            cartocss: layerStyle,
-          }],
-		  extra_params: {
-			  map_key: ""
-		  }
-        }, { https: true } )
-        .addTo(CartoDbLib.map)
-        .done(function(layer) {
-          
-          var sublayer = layer.getSubLayer(0);
-			sublayer.setInteraction(true);
-			//sublayer.setInteractivity('cartodb_id,plot_speci,plot_spe_1,plot_gener,plot_allot');
-			sublayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
-            $('#mapCanvas div').css('cursor','pointer');
-            CartoDbLib.cinfo.update(data);
-            //console.log(data);
-			});
-			sublayer.on('featureClick', function(e, latlng, pos, data){
-            CartoDbLib.getOneZone(data['cartodb_id'], latlng, "master");
-			});
-			sublayer.on('featureOut', function(e, latlng, pos, data, subLayerIndex) {
-            CartoDbLib.cinfo.clear();
-          });
-
-          CartoDbLib.onlylanduse = layer;
-		  layer.setZIndex(3);
-          CartoDbLib.drawLayerControl();
-        })
-		
-		//add ring road layer
-		var layerStyle = $('#ringroad-style').text();
-        //console.log(layerStyle);
-        cartodb.createLayer(CartoDbLib.map, {
-          user_name: 'dev',
-          type: 'cartodb',
-		  protocol: 'https',
-          sublayers: [{
-            sql: "SELECT * FROM ringroad",
-            cartocss: layerStyle
-          }]
-        }, { https: true } )
-        .addTo(CartoDbLib.map)
-        .done(function(layer) {
-          CartoDbLib.ringroad = layer;
-		  layer.setZIndex(4);
-          CartoDbLib.drawLayerControl();
-        })
-		
-		/*/add colonies layer
-		var layerStyle = $('#colonies-style').text();
-        //console.log(layerStyle);
-        cartodb.createLayer(CartoDbLib.map, {
-          user_name: 'dev',
-          type: 'cartodb',
-          sublayers: [{
-            sql: "SELECT * FROM colonymerge",
-            cartocss: layerStyle
-          }]
-        })
-        .addTo(CartoDbLib.map)
-        .done(function(layer) {
-          CartoDbLib.colonies = layer;
-		  layer.setZIndex(5);
-      
-          CartoDbLib.drawLayerControl();
-        })
-		*/
-		
-		//add layouts layer
-		var layerStyle = $('#layoutsmerge-style').text();
-        //console.log(layerStyle);
-        cartodb.createLayer(CartoDbLib.map, {
-          user_name: 'dev',
-          type: 'cartodb',
-		  protocol: 'https',
-          sublayers: [{
-            sql: "SELECT * FROM layoutsmerge",
-            cartocss: layerStyle
-          }]
-        }, { https: true } )
-        .addTo(CartoDbLib.map)
-        .done(function(layer) {
-          CartoDbLib.layouts = layer;
-		  layer.setZIndex(6);
-          CartoDbLib.drawLayerControl();
-        })
-
 		
 		loadfilter();
       }
