@@ -1,8 +1,8 @@
 var CartoDbLib = CartoDbLib || {};
 var CartoDbLib = {
 
-  map_centroid:    [16.50,80.51],
-  defaultZoom:     15,
+  map_centroid:    [11.705384, 76.081674],
+  defaultZoom:     12,
   lastClickedLayer: null,
   locationScope:   "Guntur",
   currentPinpoint: true,
@@ -15,7 +15,7 @@ var CartoDbLib = {
   initialize: function(){
 
     //reset filters
-    //$("#search_address").val(CartoDbLib.convertToPlainString($.address.parameter('address')));
+    $("#search_address").val(CartoDbLib.convertToPlainString($.address.parameter('address')));
  
 	$(".plotsfilter:checkbox").attr("checked", "checked");
 	$('#multiface').prop('checked', false);
@@ -24,16 +24,16 @@ var CartoDbLib = {
     // initiate leaflet map
     if (!CartoDbLib.map) {
       CartoDbLib.map = new L.Map('mapCanvas', {
-		  zoomControl: false
-        //center: CartoDbLib.map_centroid,
-        //zoom: CartoDbLib.defaultZoom,
-        //layers: CartoDbLib.basemap
+		  zoomControl: false,
+		center: CartoDbLib.map_centroid,
+        zoom: CartoDbLib.defaultZoom,
+        layers: CartoDbLib.basemap
      });
 	 L.control.zoom({
      position:'bottomright'
 	}).addTo(CartoDbLib.map);
 	
-	CartoDbLib.map.locate({setView: true, maxZoom: 16});
+	
 	
 	//map leaflet popup adjust
 	CartoDbLib.map.on('popupopen', function(e) {
@@ -168,9 +168,7 @@ var CartoDbLib = {
           //console.log(e)
         }); 
 		
-		loadfilter().done( function() {
-			CartoDbLib.map.locate({setView: true, maxZoom: 16});
-		});
+		loadfilter();
       }
 
     CartoDbLib.doSearch();

@@ -10,45 +10,9 @@
     <meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta content='An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.' name='description'>
-    <meta content='Avenue Realty' name='author'>
+    <meta content='Wayanad Map' name='author'>
 
-    <!-- Facebook metadata -->
-    <meta content="Avenue Realty" property="og:site_name">
-    
-      <meta content="Home - Avenue Realty" property="og:title">
-    
-    
-      <meta content="article" property="og:type">
-    
-    
-      <meta content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago." property="og:description">
-    
-    
-      <meta content="https://Avenue.in/plots/" property="og:url">
-    
-    
-    
-      <meta content="https://Avenue.in/plots/images/logo.png" property="og:image">
-    
-    
-    
-
-    <!-- Twitter metadata -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@DataMadeCo">
-    <meta name="twitter:creator" content="@DataMadeCo">
-    
-      <meta name="twitter:title" content="Home">
-    
-    
-      <meta name="twitter:url" content="https://Avenue.in/plots/">
-    
-    
-      <meta name="twitter:description" content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.">
-    
-    
-      <meta name="twitter:image:src" content="https://Avenue.in/plots/images/logo.png">
-    
+   
     <link href='/favicon.ico' rel='shortcut icon'>
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.readable.min.css"/>
@@ -234,19 +198,7 @@
     <div class='container-fluid nmap'>
       		<div id='mapCanvas'>
 		</div>
-		<div id="mySidenav" class="sidenav">
-		<div id="cus-info-header-container" style="position: absolute; top:0px;"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a><img src="https://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png"></div>
-		<a href="tel:+919533894894"><i class="fa fa-phone fa-15"></i>&nbsp;+91.9533.894.894</a>
-		<a href="mail:Support@Avenue.in"><i class="fa fa-envelope-o fa-15"></i>&nbsp;Support@Avenue.in</a>
-		<a href="https://avenue.in/plots/">Lands on Grid</a>
-		<a href="https://avenue.in/apartments/">Apartments</a>
-		<a href="https://avenue.in/plots-land-prices-in-amaravati-ap-crda-landpooling-townships/">Price History</a>
-		<a href="https://avenue.in/blog/">Blog</a>
-		<a href="https://avenue.in/submit-your-property/">Submit Property</a>
-		<a href="https://avenue.in/builders/">Builders</a>
-		</div>
-		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-      <div class="row main-row" >
+		<div class="row main-row" >
         <div class="col-sm-4 col-md-2 sidebar sidebar-left pull-left">
           <div class="panel-group sidebar-body" id="accordion-left">
             <div class="panel panel-default">
@@ -593,6 +545,8 @@
               <div id="legend" class="panel-collapse collapse in">
                 <div class="panel-body">
 					<ul class='list-unstyled zones'>
+						<h6> Residential </h6>
+						<li>
 						  <label data-content='low rise developments within the existing villages'>
 							<div class='legendIcon R1'></div>
 							Village Planning Zone
@@ -1456,6 +1410,34 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+
+$('input#layoutplots').change(function() {
+	if ($('input#layoutplots').is(':checked')) {
+		$("div#layouts").show();
+		$('#layouts').insertBefore('#crda');
+	}
+	else {
+		$("div#layouts").hide();
+	}
+	if (maphit>0) {
+	loadfilter();
+	}
+});
+
+$('input#crdaplots').change(function() {
+	if ($('input#crdaplots').is(':checked')) {
+		$("div#crda").show();
+		$('#crda').insertBefore('#layouts');
+	}
+	else {
+		$("div#crda").hide();
+	}
+	if (maphit>0) {
+	loadfilter();
+	}
+});
+
+
 var mobile = 0;
 $(window).load(function(){
 		applyMargins();
@@ -1464,7 +1446,6 @@ $(window).load(function(){
 		document.getElementsByClassName('info')[0].style.visibility = 'hidden';
 		mobile = 1;
 		}
-		CartoDbLib.map.locate({watch : true, setView: true, maxZoom: 20, maximumAge : 10000, enableHighAccuracy: true});
 });
 
 //declarations and page load end
@@ -1700,6 +1681,7 @@ function loadfilter() {
           user_name: 'sandeepgadhwal',
           type: 'cartodb',
 		  protocol: 'https',
+		  https: true,
           sublayers: [{
             sql: "SELECT * FROM admin ",
             cartocss: layerStyle,
@@ -1724,7 +1706,16 @@ function loadfilter() {
             CartoDbLib.info.clear();
           });
 		  CartoDbLib.landuse = layer;
-		  /*if (maphit<1 && findplots!=="all") {
+		  
+		  if (maphit<1 && findplots=="LAYOUTS") {
+			CartoDbLib.map.setView([16.40281,80.523992], 17);
+		  }
+		  
+		  else if (findplots=="CRDA") {
+			CartoDbLib.map.setView([16.50,80.50], 14);
+		  }
+		  
+		  else if (maphit<1 && findplots!=="all") {
 			CartoDbLib.map.setView([11.705384, 76.081674], 12);
 		  }
 
@@ -1733,7 +1724,7 @@ function loadfilter() {
 			sql.getBounds(firstSQL).done(function(bounds){
 			CartoDbLib.map.fitBounds(bounds , {maxZoom: 17});
 			});
-		  } */ 
+		  }  
         }).addTo(CartoDbLib.map).done(function(layer) {
   layer.setZIndex(3);
   removesidebarm();
@@ -1747,7 +1738,7 @@ function loadfilter() {
 
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA-hVuTbK07fHEj_iW7cjgI9cteMVeI77U&sensor=false&libraries=places&v=3.17"></script>
 <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-<script src="/js/cartodb.js"></script>
+<script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"</script>
 <!--<script src="//cdn.maptiks.com/maptiks-leaflet.min.js"></script>-->
 <script type="text/javascript" src="/js/jquery.address.js"></script>
 <script type="text/javascript" src="/js/cartodb_lib_combined.js"></script>
