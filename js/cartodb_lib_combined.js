@@ -6,7 +6,7 @@ var CartoDbLib = {
   lastClickedLayer: null,
   locationScope:   "Guntur",
   currentPinpoint: true,
-  layerUrl: 'https://becexplorer.cartodb.com/api/v2/viz/f1dab0f4-29b3-11e6-9b74-0ef7f98ade21/viz.json',
+  layerUrl: 'https://sandeepgadhwal.carto.com/api/v2/viz/ba46160b-51b5-46c1-a348-4d93429c2a49/viz.json',
   protocol: 'https',
   https: true,
   tableName: 'master',
