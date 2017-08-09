@@ -169,7 +169,7 @@ var CartoDbLib = {
         }); 
 		
 		loadfilter().done( function() {
-			CartoDbLib.map.locate({setView: true, maxZoom: 18});
+			CartoDbLib.map.locate({setView: true, maxZoom: 16});
 		});
       }
 
