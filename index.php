@@ -593,18 +593,6 @@
               <div id="legend" class="panel-collapse collapse in">
                 <div class="panel-body">
 					<ul class='list-unstyled zones'>
-						<li>
-							<nobr><img alt='Townships' src="<?php echo get_site_url() . '/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/icons/townships.png';?>">
-							<h6> Townships </h6></nobr>
-						</li>
-						<li>
-							<nobr><img alt='Sectors' src="<?php echo get_site_url() . '/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/icons/sectors.png';?>">
-							<h6> Sectors </h6></nobr>
-						</li>
-						<li>
-							<nobr><img alt='Colonies' src="<?php echo get_site_url() . '/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/icons/colonies.png';?>">
-							<h6> Colonies </h6></nobr>
-						</li>
 						<h6> Residential </h6>
 						<li>
 						  <label data-content='low rise developments within the existing villages'>
