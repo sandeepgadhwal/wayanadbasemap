@@ -9,7 +9,6 @@ var CartoDbLib = {
   layerUrl: '',
   tableName: 'master',
   maptiks_tracking_code: '',
-  protocol: 'https',
 
   initialize: function(){
 
@@ -126,7 +125,7 @@ var CartoDbLib = {
 
       var fields = "cartodb_id"
 
-      cartodb.createLayer(CartoDbLib.map, CartoDbLib.layerUrl )
+      cartodb.createLayer(CartoDbLib.map, CartoDbLib.layerUrl, { https: true } )
         .addTo(CartoDbLib.map)
         .done(function(layer) {
           CartoDbLib.onlylanduse = layer;
