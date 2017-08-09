@@ -1844,7 +1844,7 @@ function loadfilter() {
 
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyA-hVuTbK07fHEj_iW7cjgI9cteMVeI77U&sensor=false&libraries=places&v=3.17"></script>
 <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-<script src="/js/cartodb.js"></script>
+<script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"</script>
 <!--<script src="//cdn.maptiks.com/maptiks-leaflet.min.js"></script>-->
 <script type="text/javascript" src="/js/jquery.address.js"></script>
 <script type="text/javascript" src="/js/cartodb_lib_combined.js"></script>
