@@ -14,7 +14,7 @@ var CartoDbLib = {
   initialize: function(){
 
     //reset filters
-    $("#search_address").val(CartoDbLib.convertToPlainString($.address.parameter('address')));
+    //$("#search_address").val(CartoDbLib.convertToPlainString($.address.parameter('address')));
  
 	$(".plotsfilter:checkbox").attr("checked", "checked");
 	$('#multiface').prop('checked', false);
@@ -63,13 +63,13 @@ var CartoDbLib = {
 	  });//.addTo(CartoDbLib.map);
 	  
       /*CartoDbLib.satellite = L.tileLayer('https://{s}.tiles.mapbox.com/v3/datamade.k92mcmc8/{z}/{x}/{y}.png', {
-        attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>',
+        attribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>',
         detectRetina: true,
         sa_id: 'satellite'
       }).addTo(CartoDbLib.map);*/
         
-      //CartoDbLib.basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-      //attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+      //CartoDbLib.basemap = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+      //attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
       //}).addTo(CartoDbLib.map);
 	  
       CartoDbLib.baseMaps = {"Basemap": CartoDbLib.basemap, "Satellite": CartoDbLib.satellite};
@@ -339,11 +339,11 @@ var CartoDbLib = {
 		  if (props.plot_dev_a == "CRDA") {
 			  var popup_content = 
 				"\
-				<div id='cus-info-header-container'><img src='http://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png'></div>\
+				<div id='cus-info-header-container'><img src='https://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png'></div>\
 				<div id='cus-info-body-container'><b>Plot No: </b>"+props.plot_no+"<br><b>Township: </b>"+props.plot_allot+"<br><b>Plot Extent: </b>"+props.extent+" Sq. Yd<br><b>Property Type: <div class='legendIcon "+props.plot_spe_1+"'></div></b>"+" "+props.plot_gener +"<br></div>\
 				<div id='cus-info-details'><div id='cus-info-details-header'><b style='color:#fff'>Sector Price Details</b></div><b>Recommended Price:  </b> <i class='fa fa-inr' aria-hidden='true'></i>"+props.price_min+"-"+props.price_max+" /Per Sq. Yd<br><b>Market Price: </b>"+marketprice +"</div>\
 				<div id='cus-info-details'><div id='cus-info-details-header'><b style='color:#fff'>Construction Details</b></div><b>Maximum Built-up Area: </b>"+props.maximu_bui+" Sq. yd <br><b>Total Floor Area: </b>"+props.total_floo+" Sq. ft<br><b>No Of Floors Allowed: </b>"+props.no_of_floo+"</div>\
-				<div class='cus-info-button-group'><a href='http://maps.google.com/maps?saddr=my+location&daddr="+click_latlng+"' target=_blank><div id='cus-info-button-lets-talk' class='cus-dir-button' >Take me there</div></a><div id='cus-info-button-lets-talk' class='cus-info-button' onclick='imIntrested("+props.plot_no+");'>I am interested</div></div>\
+				<div class='cus-info-button-group'><a href='https://maps.google.com/maps?saddr=my+location&daddr="+click_latlng+"' target=_blank><div id='cus-info-button-lets-talk' class='cus-dir-button' >Take me there</div></a><div id='cus-info-button-lets-talk' class='cus-info-button' onclick='imIntrested("+props.plot_no+");'>I am interested</div></div>\
 				";			  
 		  }
 		  else {
@@ -354,10 +354,10 @@ var CartoDbLib = {
 			  
 			  var popup_content = 
 				"\
-				<div id='cus-info-header-container'><img src='http://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png'></div>\
+				<div id='cus-info-header-container'><img src='https://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png'></div>\
 				<div id='cus-info-body-container'><b>Plot No: </b>"+props.plot_no+"<br><b>Layout: </b>"+props.plot_allot+"<br><b>Plot Extent: </b>"+props.extent+" Sq. Yd<br><b>Property Type: <div class='legendIcon "+props.plot_spe_1+"'></div></b>"+" "+props.plot_gener +"<br><b>Layout Plot No: </b>"+props.plot_no_la+"<br><b>Plot Phase: </b>"+phase+" Phase<br></div>\
 				<div id='cus-info-details'><div id='cus-info-details-header'><b style='color:#fff'>Layout Price Details</b></div><b>Price:  </b> <i class='fa fa-inr' aria-hidden='true'></i>"+marketprice +"/Per Sq. Yd</div>\
-				<div class='cus-info-button-group'><a href='http://maps.google.com/maps?saddr=my+location&daddr="+click_latlng+"' target=_blank><div id='cus-info-button-lets-talk' class='cus-dir-button' >Take me there</div></a><div id='cus-info-button-lets-talk' class='cus-info-button' onclick='imIntrested("+props.plot_no+");'>I am interested</div></div>\
+				<div class='cus-info-button-group'><a href='https://maps.google.com/maps?saddr=my+location&daddr="+click_latlng+"' target=_blank><div id='cus-info-button-lets-talk' class='cus-dir-button' >Take me there</div></a><div id='cus-info-button-lets-talk' class='cus-info-button' onclick='imIntrested("+props.plot_no+");'>I am interested</div></div>\
 				";		  
 		  }
 
@@ -365,7 +365,7 @@ var CartoDbLib = {
 	  else {
 		  var popup_content = 
 			"\
-			<div id='cus-info-header-container'><img src='http://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png'></div>\
+			<div id='cus-info-header-container'><img src='https://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png'></div>\
 			<div id='cus-info-body-container'><b>Landuse Type: </b>"+props.plot_gener +"<br><b>Landuse Details: </b><div class='legendIcon "+props.plot_spe_1+"'></div></b>"+" "+props.plot_speci+"<div>\
 			";
 	  }
@@ -402,7 +402,7 @@ var CartoDbLib = {
           $.address.parameter('address', encodeURIComponent(address));
           CartoDbLib.map.setView(new L.LatLng( CartoDbLib.currentPinpoint[0], CartoDbLib.currentPinpoint[1] ), 16)
           CartoDbLib.centerMark = new L.Marker(CartoDbLib.currentPinpoint, { icon: (new L.Icon({
-            iconUrl: 'http://avenuein.staging.wpengine.com/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/blue-pushpin.png',
+            iconUrl: 'https://avenuein.staging.wpengine.com/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/blue-pushpin.png',
             iconSize: [32, 32],
             iconAnchor: [10, 32]
           }))}).addTo(CartoDbLib.map);
