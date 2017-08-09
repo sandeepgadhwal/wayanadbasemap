@@ -1720,7 +1720,7 @@ function loadfilter() {
 		  }
 
 		  else {
-			sql = cartodb.SQL({ user: 'dev' });
+			sql = cartodb.SQL({ user: 'sandeepgadhwal' }, { https: true } );
 			sql.getBounds(firstSQL).done(function(bounds){
 			CartoDbLib.map.fitBounds(bounds , {maxZoom: 17});
 			});
