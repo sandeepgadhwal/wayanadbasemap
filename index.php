@@ -10,45 +10,9 @@
     <meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta content='An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.' name='description'>
-    <meta content='Avenue Realty' name='author'>
+    <meta content='Wayanad Map' name='author'>
 
-    <!-- Facebook metadata -->
-    <meta content="Avenue Realty" property="og:site_name">
-    
-      <meta content="Home - Avenue Realty" property="og:title">
-    
-    
-      <meta content="article" property="og:type">
-    
-    
-      <meta content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago." property="og:description">
-    
-    
-      <meta content="https://Avenue.in/plots/" property="og:url">
-    
-    
-    
-      <meta content="https://Avenue.in/plots/images/logo.png" property="og:image">
-    
-    
-    
-
-    <!-- Twitter metadata -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@DataMadeCo">
-    <meta name="twitter:creator" content="@DataMadeCo">
-    
-      <meta name="twitter:title" content="Home">
-    
-    
-      <meta name="twitter:url" content="https://Avenue.in/plots/">
-    
-    
-      <meta name="twitter:description" content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.">
-    
-    
-      <meta name="twitter:image:src" content="https://Avenue.in/plots/images/logo.png">
-    
+   
     <link href='/favicon.ico' rel='shortcut icon'>
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.readable.min.css"/>
@@ -234,19 +198,7 @@
     <div class='container-fluid nmap'>
       		<div id='mapCanvas'>
 		</div>
-		<div id="mySidenav" class="sidenav">
-		<div id="cus-info-header-container" style="position: absolute; top:0px;"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a><img src="https://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png"></div>
-		<a href="tel:+919533894894"><i class="fa fa-phone fa-15"></i>&nbsp;+91.9533.894.894</a>
-		<a href="mail:Support@Avenue.in"><i class="fa fa-envelope-o fa-15"></i>&nbsp;Support@Avenue.in</a>
-		<a href="https://avenue.in/plots/">Lands on Grid</a>
-		<a href="https://avenue.in/apartments/">Apartments</a>
-		<a href="https://avenue.in/plots-land-prices-in-amaravati-ap-crda-landpooling-townships/">Price History</a>
-		<a href="https://avenue.in/blog/">Blog</a>
-		<a href="https://avenue.in/submit-your-property/">Submit Property</a>
-		<a href="https://avenue.in/builders/">Builders</a>
-		</div>
-		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-      <div class="row main-row" >
+		<div class="row main-row" >
         <div class="col-sm-4 col-md-2 sidebar sidebar-left pull-left">
           <div class="panel-group sidebar-body" id="accordion-left">
             <div class="panel panel-default">
@@ -1461,26 +1413,26 @@ function closeNav() {
 //declarations and page load
 var url = "";
 var findplots = "";
-var url_string = window.location.href.toUpperCase();     // Returns full URL
-url = new URL(url_string);
+//var url_string = window.location.href.toUpperCase();     // Returns full URL
+//url = new URL(url_string);
 
-var findplots = url.searchParams.get("FINDPLOTS");
-if (findplots) {
-	findplots = findplots.trim().toUpperCase();
-	changeplots(findplots);	//call function
-}
-else {
+//var findplots = url.searchParams.get("FINDPLOTS");
+//if (findplots) {
+//	findplots = findplots.trim().toUpperCase();
+//	changeplots(findplots);	//call function
+//}
+//else {
 	//console.log("No plot type filter applied");
-}
+//}
 //console.log(findplots);
 
-var plotno = url.searchParams.get("PLOTNO");
-if (plotno) {
-	plotno = plotno.trim().toUpperCase();	//call function
-}
-else {
-	//console.log("No plot type filter applied");
-}
+//var plotno = url.searchParams.get("PLOTNO");
+//if (plotno) {
+//	plotno = plotno.trim().toUpperCase();	//call function
+//}
+//else {
+//	//console.log("No plot type filter applied");
+//}
 //console.log(findplots);
 
 
