@@ -9,6 +9,7 @@ var CartoDbLib = {
   layerUrl: '',
   tableName: 'master',
   maptiks_tracking_code: '',
+  protocol: 'https',
 
   initialize: function(){
 
@@ -49,13 +50,13 @@ var CartoDbLib = {
 	  //var googleLayer = new L.Google('ROADMAP');
       //CartoDbLib.google = new L.Google('ROADMAP', {animate: false});
 	  
-	  CartoDbLib.basemap = L.tileLayer('http://www.google.co.in/maps/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+	  CartoDbLib.basemap = L.tileLayer('https://www.google.co.in/maps/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga', {
 		detectRetina: true,
 		  maxNativeZoom: 25,
 		  maxZoom: 30,
 	  }).addTo(CartoDbLib.map);
       
-	  CartoDbLib.satellite = L.tileLayer('http://www.google.co.in/maps/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+	  CartoDbLib.satellite = L.tileLayer('https://www.google.co.in/maps/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga', {
 		  detectRetina: true,
 		  maxNativeZoom: 25,
 		  maxZoom: 30
@@ -169,6 +170,7 @@ var CartoDbLib = {
         cartodb.createLayer(CartoDbLib.map, {
           user_name: 'sandeepgadhwal',
           type: 'cartodb',
+		  protocol: 'https',
           sublayers: [{
             sql: "SELECT * FROM admin_layer",
             cartocss: layerStyle,
@@ -206,6 +208,7 @@ var CartoDbLib = {
         cartodb.createLayer(CartoDbLib.map, {
           user_name: 'dev',
           type: 'cartodb',
+		  protocol: 'https',
           sublayers: [{
             sql: "SELECT * FROM ringroad",
             cartocss: layerStyle
@@ -244,6 +247,7 @@ var CartoDbLib = {
         cartodb.createLayer(CartoDbLib.map, {
           user_name: 'dev',
           type: 'cartodb',
+		  protocol: 'https',
           sublayers: [{
             sql: "SELECT * FROM layoutsmerge",
             cartocss: layerStyle

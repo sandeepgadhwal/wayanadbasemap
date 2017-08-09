@@ -24,11 +24,11 @@
       <meta content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago." property="og:description">
     
     
-      <meta content="http://Avenue.in/plots/" property="og:url">
+      <meta content="https://Avenue.in/plots/" property="og:url">
     
     
     
-      <meta content="http://Avenue.in/plots/images/logo.png" property="og:image">
+      <meta content="https://Avenue.in/plots/images/logo.png" property="og:image">
     
     
     
@@ -41,13 +41,13 @@
       <meta name="twitter:title" content="Home">
     
     
-      <meta name="twitter:url" content="http://Avenue.in/plots/">
+      <meta name="twitter:url" content="https://Avenue.in/plots/">
     
     
       <meta name="twitter:description" content="An interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout Chicago.">
     
     
-      <meta name="twitter:image:src" content="http://Avenue.in/plots/images/logo.png">
+      <meta name="twitter:image:src" content="https://Avenue.in/plots/images/logo.png">
     
     <link href='/favicon.ico' rel='shortcut icon'>
     <!-- Styles -->
@@ -213,7 +213,7 @@
 		}
 	.nmap {
 
-		margin: 70px 0 0;
+		margin: 0 0 0;
 	}
 	.hshide.hsection{
 		display: block !important;
@@ -235,15 +235,15 @@
       		<div id='mapCanvas'>
 		</div>
 		<div id="mySidenav" class="sidenav">
-		<div id="cus-info-header-container" style="position: absolute; top:0px;"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a><img src="http://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png"></div>
+		<div id="cus-info-header-container" style="position: absolute; top:0px;"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a><img src="https://avenuein.wpengine.netdna-cdn.com/wp-content/uploads/2015/11/Logo-Avenue-Caption-White.png"></div>
 		<a href="tel:+919533894894"><i class="fa fa-phone fa-15"></i>&nbsp;+91.9533.894.894</a>
 		<a href="mail:Support@Avenue.in"><i class="fa fa-envelope-o fa-15"></i>&nbsp;Support@Avenue.in</a>
-		<a href="http://avenue.in/plots/">Lands on Grid</a>
-		<a href="http://avenue.in/apartments/">Apartments</a>
-		<a href="http://avenue.in/plots-land-prices-in-amaravati-ap-crda-landpooling-townships/">Price History</a>
-		<a href="http://avenue.in/blog/">Blog</a>
-		<a href="http://avenue.in/submit-your-property/">Submit Property</a>
-		<a href="http://avenue.in/builders/">Builders</a>
+		<a href="https://avenue.in/plots/">Lands on Grid</a>
+		<a href="https://avenue.in/apartments/">Apartments</a>
+		<a href="https://avenue.in/plots-land-prices-in-amaravati-ap-crda-landpooling-townships/">Price History</a>
+		<a href="https://avenue.in/blog/">Blog</a>
+		<a href="https://avenue.in/submit-your-property/">Submit Property</a>
+		<a href="https://avenue.in/builders/">Builders</a>
 		</div>
 		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
       <div class="row main-row" >
@@ -593,6 +593,18 @@
               <div id="legend" class="panel-collapse collapse in">
                 <div class="panel-body">
 					<ul class='list-unstyled zones'>
+						<li>
+							<nobr><img alt='Townships' src="<?php echo get_site_url() . '/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/icons/townships.png';?>">
+							<h6> Townships </h6></nobr>
+						</li>
+						<li>
+							<nobr><img alt='Sectors' src="<?php echo get_site_url() . '/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/icons/sectors.png';?>">
+							<h6> Sectors </h6></nobr>
+						</li>
+						<li>
+							<nobr><img alt='Colonies' src="<?php echo get_site_url() . '/wp-content/themes/wpresidence-child/amaravati-plots-layout/images/icons/colonies.png';?>">
+							<h6> Colonies </h6></nobr>
+						</li>
 						<h6> Residential </h6>
 						<li>
 						  <label data-content='low rise developments within the existing villages'>
@@ -1787,6 +1799,7 @@ function loadfilter() {
         cartodb.createLayer(CartoDbLib.map, {
           user_name: 'sandeepgadhwal',
           type: 'cartodb',
+		  protocol: 'https',
           sublayers: [{
             sql: "SELECT * FROM admin ",
             cartocss: layerStyle,
