@@ -197,7 +197,7 @@
 		display: block;
 	}
 	body a.leaflet-control-layers-toggle, body .leaflet-retina .leaflet-control-layers-toggle {
-		background-image: url("<?php echo get_site_url();?>/wp-content/themes/wpresidence-child/amaravati-plots-layout/css/images/layers.png");
+		background-image: url("/css/images/layers.png");
 		width: 36px;
 		height: 36px;
 	}
