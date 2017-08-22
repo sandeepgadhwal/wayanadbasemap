@@ -231,6 +231,16 @@
 	</style>
   </head>
   <body>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- urbantalks -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7142392068862748"
+     data-ad-slot="1772484313"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     <div class='container-fluid nmap'>
       		<div id='mapCanvas'>
 		</div>
